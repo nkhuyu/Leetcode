@@ -13,6 +13,10 @@ int main()
 	maptest['b']=2;
 	maptest['c']=3;
 	maptest['d']=4;
+	//begin and end values
+	cout<<maptest.begin()->first<<" "<<maptest.begin()->second<<endl;
+	//error, end point to nothing
+	//cout<<maptest.end()->first<<" "<<maptest.end()->second<<endl;
 
 	for (it = maptest.begin();it != maptest.end();it++)
 	{
@@ -21,7 +25,7 @@ int main()
 
 
 
-	//find 1
+	//find 2
 	map<char,int>::iterator iter;
 	iter = maptest.find('b');		
 	if (iter != maptest.end())
@@ -30,6 +34,13 @@ int main()
 	}
 
 
+	//find 4
+	map<char,int>::iterator iterend;
+	iterend = maptest.find('d');		
+	if (iterend != maptest.end())
+	{
+		cout<< iterend->first<<" "<<iterend->second<<endl;
+	}
 	
 	return 0;	
 }
