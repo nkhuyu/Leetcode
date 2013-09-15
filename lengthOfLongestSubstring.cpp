@@ -18,11 +18,11 @@ class Solution
         int n=s.size();
         int i=0,j=0,maxLen=0;
         set<char> mySet;
-        //mySet.insert(s[0]);
+
+
         while(j<n)
         {
            // find repeat character
-//            cout<<j<<" "<<(mySet.find(s[j]) != mySet.end())<<endl;
             if(mySet.find(s[j]) != mySet.end())
             { 
                 i++;
@@ -34,11 +34,8 @@ class Solution
             {  
                 mySet.insert(s[j]);
                 maxLen=max(maxLen,j-i+1);
-//                cout<<maxLen<<endl;
                 j++;
             }
-             
-           // j++;   
         }
 
     return maxLen;
