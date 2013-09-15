@@ -27,6 +27,7 @@ class Solution
             { 
                 i++;
                 mySet.clear();
+                j=i+1;
                 mySet.insert(s[i]);
             }
             else
@@ -34,9 +35,10 @@ class Solution
                 mySet.insert(s[j]);
                 maxLen=max(maxLen,j-i+1);
 //                cout<<maxLen<<endl;
+                j++;
             }
              
-            j++;   
+           // j++;   
         }
 
     return maxLen;
@@ -46,7 +48,7 @@ class Solution
 
 int main()
 {
-    string s = "abbc";
+    string s = "aaaaaaaabbbbb";
 
     Solution sol;
     cout<<sol.lengthOfLongestSubstring(s)<<endl;
