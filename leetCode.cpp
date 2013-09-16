@@ -12,11 +12,12 @@ using namespace std;
 
 class Solution
 {
-    int lengthOfLongestSubstring(String s)
-    {
+    public:
+        int reverse(String s)
+        {
 
         }
-    };
+};
 
 
 
@@ -24,9 +25,8 @@ class Solution
 int main()
 {
 
-//    mySet<char> mySet;
    
 
 
     return 0;
-    }
+}
