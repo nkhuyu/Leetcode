@@ -13,9 +13,9 @@ using namespace std;
 class Solution
 {
     public:
-        int reverse(String s)
+        int reverse(string s)
         {
-
+            return 0;
         }
 };
 
@@ -25,8 +25,8 @@ class Solution
 int main()
 {
 
-   
-
+    Solution sol;
+    cout<<sol.reverse("abd")<<endl;
 
     return 0;
 }
