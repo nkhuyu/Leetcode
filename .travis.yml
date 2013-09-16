@@ -1,15 +1,4 @@
 language: cpp
 compiler:
   - gcc
-  - clang
-branches:
-  only:
-    - master
-    - compiler
-notifications:
-  recipients:
-    - nkhuyu@gmail.com
-  email:
-    on_success: change
-    on_failure: always
 
