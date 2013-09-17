@@ -22,6 +22,11 @@ class Solution
         {
             return x;
         }
+
+				int function2(int y)
+				{
+					return y;
+				}
 };
 
 
