@@ -22,6 +22,7 @@ class Solution
 
             for(int i = 0; i < n; i++)
             {
+                if(i!= 0 && arr[i] == arr[i-1]) continue;
                 int j = i + 1;
                 int k = n - 1;
                 while (j < k)
@@ -43,6 +44,8 @@ class Solution
                         triplets.insert(triplet);
                         j++;
                         k--;
+                        while(j < n-1 && arr[j] == arr[j-1]) j++;
+                        while(k > 0 && arr[k] == arr[k+1]) k--;
                     }
                     
                 }
