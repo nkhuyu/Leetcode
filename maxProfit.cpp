@@ -13,7 +13,7 @@ using namespace std;
 class Solution
 {
     public:
-        int maxProfix(vector<int> &prices)
+        int maxProfit(vector<int> &prices)
         {
             int max_pro = 0;
             int min = 0;
@@ -43,7 +43,7 @@ int main()
     prices.push_back(3);
     prices.push_back(4);
     Solution sol;
-    cout<<sol.maxProfix(prices)<<endl;
+    cout<<sol.maxProfit(prices)<<endl;
 
     return 0;
 }
