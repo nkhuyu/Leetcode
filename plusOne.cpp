@@ -16,7 +16,7 @@ class Solution
         vector<int> plusOne(vector<int>& digits)
         {
             int len = digits.size();
-            unsigned int i;
+            int i;
             for(i = len-1; i >= 0; i--)
             {
                     if(digits[i] != 9)
