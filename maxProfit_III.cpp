@@ -17,22 +17,23 @@ class Solution
         {
             int max_pro = 0;
             int len = prices.size();
+            if(len < 2) return 0;
             vector<int> left_max_pro(len,0);
             vector<int> right_max_pro(len,0);    
-            int right_max = 0;
-            int left_min = 0;
+            int right_max = prices[len-1];
+            int left_min = prices[0];
 
-            for(int i = len-1; i >= 0; i--)
+            for(int i = len-2; i >= 0; i--)
                 {
                     right_max = max(right_max, prices[i]);
-                    right_max_pro[i] = max(right_max_pro[i], right_max-prices[i]);
+                    right_max_pro[i] = max(right_max_pro[i+1], right_max-prices[i]);
                 }
 
             
             for (int i = 1; i < len; i++)
                 {
                     left_min = min(left_min, prices[i]);
-                    left_max_pro[i] = max(left_max_pro[i], prices[i]-left_min);
+                    left_max_pro[i] = max(left_max_pro[i-1], prices[i]-left_min);
                     
                     max_pro = max(max_pro, left_max_pro[i]+right_max_pro[i]);
                 }
