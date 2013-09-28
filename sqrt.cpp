@@ -35,6 +35,8 @@ class Solution
 
         int sqrt1(int x)
         {
+            if(x <= 1) return x;
+
             int L = 0, R = x, mid;
 
             while( (R-L) > 1)
