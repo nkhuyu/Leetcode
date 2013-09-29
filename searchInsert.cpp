@@ -16,7 +16,7 @@ class Solution
         /**
         * O(log n)
         */
-        int searchInsert(int[] A, int n, int target)
+        int searchInsert(int A[], int n, int target)
         {
             int left = 0, right = n-1, mid;
             while(right-left > 1)
@@ -35,13 +35,13 @@ class Solution
                     right = mid;
                 }
             }
-            return left
+            return left;
         }
 
         /**
         * O(n) 
         */
-        int searchInsert(int[] A,int n, int target)
+        int searchInsert(int A[],int n, int target)
         {
             int i;
             for(i = 0;i < n-1; i++)
