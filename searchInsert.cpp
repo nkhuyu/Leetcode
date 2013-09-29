@@ -19,7 +19,7 @@ class Solution
         int searchInsert(int A[], int n, int target)
         {
             int left = 0, right = n-1, mid;
-            while(right-left > 1)
+            while(right-left >= 0)
             {
                 mid = (left+right)/2;
                 if(A[mid] == target)
@@ -28,11 +28,11 @@ class Solution
                 }
                 else if(target > A[mid])
                 {
-                    left = mid;
+                    left = mid+1;
                 }
                 else
                 {
-                    right = mid;
+                    right = mid-1;
                 }
             }
             return left;
