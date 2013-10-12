@@ -43,3 +43,18 @@ for(int i=N-1;i>=0;--i) {
   products[i]*=p;
   p*=a[i];
 }
+
+
+
+// recursion solution
+
+int multiply(int *a, int fwdProduct, int indx) {
+    int revProduct = 1;
+    if (indx < N) {
+       revProduct = multiply(a, fwdProduct*a[indx], indx+1);
+       int cur = a[indx];
+       a[indx] = fwdProduct * revProduct;
+       revProduct *= cur;
+    }
+    return revProduct;
+}
