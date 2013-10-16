@@ -20,11 +20,20 @@ class Solution
                 {
                     temps = combine(n, k-1);
                     int m = temps.size();
+                   // cout<<temps.size()<<endl;
                     for(int i = 0; i < m; i++)
                     {
                         vector<vector<int> > tem;
                         tem = append(temps[i],n);
-                        results.insert(results.end(),tem.begin(),tem.end());                 
+                        if(results.size() == 0)
+                        {
+                            results = tem;
+                        }
+                        else
+                        {
+                            results.insert(results.end(),tem.begin(),tem.end());
+                        }
+                        //cout<<results.size()<<endl;
                     }
                 }
         return results;
@@ -45,13 +54,16 @@ class Solution
             }
             else
             {
-                for(int i = temp.back() + 1; i < n; i++)
-                {
-                    cout<<temp.back();
-                    temp.push_back(i);
-                    apps.push_back(temp);
-                    temp.pop_back();
-                }
+                //int m = temp.size();
+               // for(int j = 0; j < m; j++)
+               // {
+                    for(int i = temp.back() + 1; i <= n; i++)
+                    {
+                        temp.push_back(i);
+                        apps.push_back(temp);
+                        temp.pop_back();
+                    }
+                //}
             }
             return apps;
         }
@@ -59,9 +71,19 @@ class Solution
 int main()
 {
     Solution sol;
-    sol.combine(3,1);
+    vector<vector<int> > res = sol.combine(2,2);
+    for(unsigned int i = 0; i < res.size(); i++)
+    {
+        for(unsigned int j = 0; j < res[i].size(); j++)
+        {
+            cout<<res[i][j];
+        }
+        cout<<endl;
+    }
     /*vector<int> temp;
-    sol.append(temp,3);
+    temp.push_back(1);
+    //temp.push_back(2);
+    sol.append(temp,2);
     for(unsigned int i = 0; i < sol.append(temp,3).size(); i++)
     {
         for(unsigned int j = 0; j < sol.append(temp,3)[i].size(); j++)
