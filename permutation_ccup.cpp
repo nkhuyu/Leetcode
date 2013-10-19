@@ -85,7 +85,7 @@ int main()
     }
     */
     
-    string str = "ab";
+    string str = "abcdefgh";
     vector<string> res;
     Helper help;
     res = help.getPerms(str);

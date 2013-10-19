@@ -1,0 +1,5 @@
+#!/bin/bash
+
+file_name=$1
+/usr/bin/g++ -Wall $file_name
+./a.out
