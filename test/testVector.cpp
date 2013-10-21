@@ -80,16 +80,26 @@ class Test {
             results.push_back(result);
             cout<<results.size()<<endl;
         }
+
+        void testVectorPushBack()
+        {
+            vector<int> result(1);
+            cout<<result.size()<<endl;//1
+            cout<<result[0]<<endl;//0
+            result.push_back(1);
+            cout<<result.size();//2
+        }
 };
 
 
 int main()
 {
     Test test;
-    test.testInsert();
-    test.testBeginEnd();
-    test.testIterator();
-    test.testVectorString();
-    test.testVectorVectorSize();
+   // test.testInsert();
+   // test.testBeginEnd();
+   // test.testIterator();
+   // test.testVectorString();
+   // test.testVectorVectorSize();
+    test.testVectorPushBack();
     return 0;
 }
