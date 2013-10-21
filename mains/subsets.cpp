@@ -33,7 +33,7 @@ class Solution
             }
         }
 
-       //recursive solution, it seems it's no a good solution.(We need to sort out results) 
+       //recursive solution, it seems it's no a good solution. 
         vector<vector<int> > subsets(vector<int> &S)
         {
             int n = S.size();
@@ -66,9 +66,21 @@ class Solution
         }
 
         //iterative solution:
-        vector<vector<int> > subsets(vector<int> &S)
+        vector<vector<int> > subsets2(vector<int> &S)
         {
-
+            sort(S.begin(),S.end());
+            vector<vector<int> > results(1);
+            for(unsigned int i = 0; i < S.size(); i++)
+            {
+                int j = results.size();
+                while(j > 0)
+                {
+                    j--;
+                    results.push_back(results[j]);
+                    results.back().push_back(S[i]);
+                }
+            }
+            return results;
         }
 };
 
@@ -83,7 +95,7 @@ int main()
     S.push_back(3);
     S.push_back(0);
     S.push_back(1);
-    results = sol.subsets(S);
+    results = sol.subsets2(S);
     //sort(results.begin(),results().end());
     //C++11
 //    std::sort(results.begin(), results.end(), [](const std::vector< int >& a, const std::vector< int >& b){ return a[1] > b[1];} );
