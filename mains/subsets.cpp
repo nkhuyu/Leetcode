@@ -82,6 +82,30 @@ class Solution
             }
             return results;
         }
+        // iterative solution (bit method):
+        vector<vector<int> > subsets3(vector<int> &S)
+        {
+            sort(S.begin(), S.end());
+            
+           
+            int n = S.size();
+            int size = (1 << n);
+          
+            vector<vector<int> > results;
+            for(int k = 0; k < size; k++)
+            {
+                vector<int> result;
+                for(unsigned int i = 0; i < S.size(); i++)
+                {
+                    if( k & (1 << i) )
+                    {
+                        result.push_back(S[i]);
+                    }
+                }
+                results.push_back(result);
+            }
+            return results;
+        }
 };
 
 
@@ -95,7 +119,7 @@ int main()
     S.push_back(3);
     S.push_back(0);
     S.push_back(1);
-    results = sol.subsets2(S);
+    results = sol.subsets3(S);
     //sort(results.begin(),results().end());
     //C++11
 //    std::sort(results.begin(), results.end(), [](const std::vector< int >& a, const std::vector< int >& b){ return a[1] > b[1];} );
