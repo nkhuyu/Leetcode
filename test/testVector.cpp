@@ -89,6 +89,18 @@ class Test {
             result.push_back(1);
             cout<<result.size();//2
         }
+        void testInitial()
+        {
+            vector<int> res(3,2);// 2 2 2
+            vector<int> res1(2);//0 0
+
+            vector<vector<int> > res2(2,res1);
+            for(unsigned j = 0; j < res2.size(); j++)
+            for(unsigned i = 0; i < res2[0].size(); i++)
+            {
+                cout<<res2[j][i]<<endl;
+            }
+        }
 };
 
 
@@ -100,6 +112,6 @@ int main()
    // test.testIterator();
    // test.testVectorString();
    // test.testVectorVectorSize();
-    test.testVectorPushBack();
+    test.testInitial();
     return 0;
 }
