@@ -40,8 +40,8 @@ class Solution
             ssize_t beginX = 0, endX = matrix[0].size()-1;
             ssize_t beginY = 0, endY = matrix.size()-1;
        
-           // cout<<endX<<endl;//1
-           // cout<<endY<<endl;//0
+           // cout<<endX<<endl;//2
+           // cout<<endY<<endl;//1
            while(true)
            {
                // from left to right
@@ -49,24 +49,29 @@ class Solution
                    results.push_back(matrix[beginY][i]);
                beginY++;
                if(beginY > endY) return results;
-
+            
+              // printVector(results);
                //from top to down
                for(ssize_t i = beginY; i <= endY; i++)
                    results.push_back(matrix[i][endX]);
                endX--;
                if(beginX > endX) return results;
 
+                //printVector(results);
                //from right to left
-               for(ssize_t i = endX; i>=beginX; i--)
+               for(ssize_t i = endX; i >= beginX; i--)
                    results.push_back(matrix[endY][i]);
                endY--;
-               if(endY > beginY) return results;
+               if(endY < beginY) return results;
 
+               // printVector(results);
                //from bottom up
-               for(ssize_t i = endY; i>=beginY; i--)
+               for(ssize_t i = endY; i >= beginY; i--)
                    results.push_back(matrix[i][beginX]);
                beginX++;
-               if(beginX>endX) return results;
+               if(beginX > endX) return results;
+              // printVector(results);
+              // cout<<beginX<<endX<<endl;
            }
            return results;
         }
@@ -87,15 +92,15 @@ int main()
     S1.push_back(4);
     S1.push_back(5);
     S1.push_back(6);
-    vector<int> S2;
-    S2.push_back(7);
-    S2.push_back(8);
-    S2.push_back(9);
+    //vector<int> S2;
+    //S2.push_back(7);
+    //S2.push_back(8);
+    //S2.push_back(9);
 
 
     result.push_back(S);
     result.push_back(S1);
-    result.push_back(S2);
+    //result.push_back(S2);
     vector<int> results;
     results = sol.spiralOrder(result);
 
