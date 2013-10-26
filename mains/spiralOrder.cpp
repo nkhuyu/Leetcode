@@ -33,7 +33,8 @@ class Solution
             }
         }
         
-        vector<int> spiralOrder(vector<vector<int> > & matrix)
+        //iterative solution
+        vector<int> spiralOrder1(vector<vector<int> > & matrix)
         {
             vector<int> results;
             if(matrix.empty()) return results;
@@ -74,6 +75,39 @@ class Solution
               // cout<<beginX<<endX<<endl;
            }
            return results;
+        }
+
+
+        //recursive solution
+        vector<vector<int> > getSubMatrix(vector<vector<int> > &matrix)
+        {
+            vector<vector<int> > results;
+            ssize_t m = matrix[0].size();
+            ssize_t n = matrix.size();
+            if(n == 0 || n == 1 || n == 2 || m == 0 || m == 1 || m == 2) return results;
+            else
+                {
+                    for(ssize_t i = 1; ssize_t < n-1; i++)
+                    {
+                        matrix[i].pop_back();
+                        matrix[i].erase(matrix.begin());
+                        results.push_back(matrix[i]);
+                    }
+                }
+            return results;
+        }
+
+
+        vector<int> spiralOrder(vector<vector<int> >&matrix)
+        {
+            vector<int> results;
+            if(matrix.empty()) return results;
+
+            ssize_t X_begin = 0; X_end = matrix[0].size();
+            ssize_t Y_begin = 0; Y_end = matrix.size();
+
+          //didn't finish   
+
         }
 
 };
