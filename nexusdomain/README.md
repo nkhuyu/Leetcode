@@ -1,4 +1,0 @@
-nexusdomain
-===========
-
-C++ Library
