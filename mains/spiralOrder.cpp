@@ -37,9 +37,11 @@ class Solution
         {
             vector<int> results;
             if(matrix.empty()) return results;
-            ssize_t beginX = 0, endX = matrix.size()-1;
-            ssize_t beginY = 0, endY = matrix[0].size()-1;
-            
+            ssize_t beginX = 0, endX = matrix[0].size()-1;
+            ssize_t beginY = 0, endY = matrix.size()-1;
+       
+            cout<<endX<<endl;//1
+            cout<<endY<<endl;//0
             // from left to right
             for(ssize_t i = beginX; i <= endX; i++)
                 results.push_back(matrix[beginY][i]);
@@ -63,6 +65,8 @@ class Solution
                 results.push_back(matrix[i][beginX]);
             beginX++;
             if(beginX>endX) return results;
+        
+            return results;
         }
 
 };
@@ -72,9 +76,15 @@ class Solution
 int main()
 {
     Solution<int> sol;
-    vector<vector<int> >results;
-
+    vector<vector<int> >result;
     vector<int> S;
-    sol.printVectorVector(results);
+    S.push_back(2);
+    S.push_back(3);
+    result.push_back(S);
+
+    vector<int> results;
+    results = sol.spiralOrder(result);
+
+    sol.printVector(results);
     return 0;
 }
