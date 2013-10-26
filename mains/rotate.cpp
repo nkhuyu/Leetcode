@@ -45,16 +45,16 @@ class Solution
                     int temp = matrix[first][i];
 
                     //up top
-                    matrix[first][i] = matrix[last-i][first];
+                    matrix[first][i] = matrix[last-i+first][first];
 
                     //left top
-                    matrix[last-i][first] = matrix[last][last-i];
+                    matrix[last-i+first][first] = matrix[last][last-i+first];
 
                     //buttom top
-                    matrix[last][last-i] = matrix[i][last];
+                    matrix[last][last-i+first] = matrix[i][last];
 
                     //right top
-                    matrix[i][last] = matrix[first][i];
+                    matrix[i][last] = temp;
                 }
             }
         }
